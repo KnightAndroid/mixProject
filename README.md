@@ -35,7 +35,7 @@ evaluate(new File(                                                      // new
 ))
 ```
 
-![Android工程添加对Flutter的依赖](image/Android工程添加对Flutter的依赖)
+![Android工程添加对Flutter的依赖](image/Android工程添加对Flutter的依赖.png)
 这样要注意：`xxxx/.android/include_flutter.groovy`中的xxxx一定要和以module形式创建的Flutter工程名一致。
 这时候`Sync`一下，发现Flutter的module已经添加到项目中了。
 
