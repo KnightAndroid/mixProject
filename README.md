@@ -54,7 +54,7 @@ flutter工程和Android工程下minSdkVersion要一致。
 ### 1. FlutterActivity
 在Android原生调用Flutter页面之前，先知道`FlutterActivity`这个类，在创建的Flutter`Module`中`.android`->`app`->`flutter_module`->`host`下有个`MainActivity`,这个类是继承`FlutterActivity`类，在`AndroidManifest.xml`下并且配置了这个启动界面，也就是说当原生Android调用Flutter时，该类是Flutter项目的页面入口。那么下面看看这个类的源码，到底做了什么？
 
-![FlutterActivity实现的接口](image/FlutterActivity实现的借口)
+![FlutterActivity实现的接口](image/FlutterActivity实现的借口.png)
 可以发现它继承了`Activity`，也就是它还是普通的`Activity`，另外还实现了三个接口：
 
 * Provider
