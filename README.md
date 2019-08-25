@@ -759,6 +759,7 @@ public class FlutterJNI {
 这里可以得出，只要打开`FlutterActivity`页面的时候，通过`intent`传入的key，如果这个值于`Flutter`项目定义的route值一样，就能跳到对应的页面。下面用一张图简单描述流程：
 
 ![启动过程](image/Flutter启动过程.png)
+
 也就是当原生打开Flutter页面的时候，其实还是跳转`Activity`，只不过这个`Activity`铺了`FlutterView`来显示，那下面具体实践。
 
 ## 四、简单例子
@@ -1060,6 +1061,7 @@ public class FlutterFragment extends Fragment {
 看看效果图：
 
 ![嵌套Flutter页面](image/嵌套FlutterFragment.gif)
+
 可以看到只通过`new FlutterFragment`代码即可把`Flutter`页面嵌套到原生Android里。
 
 ### 2.2.跳转到指定页面
@@ -1343,6 +1345,7 @@ class _TabFragmentState extends State<TabFragment>{
 
 
 ![fragment嵌套Flutter](image/以fragment形式嵌套效果图.gif)
+
 点击**嵌套Flutter页面**，返现`Flutter页面`以`Fragment`形式嵌套在原生中了。
 
 ### 3.以FlutterActivity为载体
@@ -1574,7 +1577,7 @@ class _TestState extends State<Test>{
 #### 3.5.效果
 **debug**环境下效果如下：
 
-![debug环境下](image/debug环境下跳转Flutter页面效果.gif)
+![debug环境下](image/debug环境下跳转到Flutter页面效果.gif)
 
 可以看到`debug`下会有明显的黑屏现象，那么`release`会不会是这样呢？
 
