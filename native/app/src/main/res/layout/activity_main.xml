@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+
+        />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ece7e7" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_radio"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+
+        >
+
+        <RadioGroup
+            android:id="@+id/rg_foot_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_button_one"
+                style="@style/main_footer_bar_radio"
+                android:checked="true"
+                android:drawableTop="@drawable/widget_bar_one"
+                android:text="跳转到flutter" />
+
+            <RadioButton
+                android:id="@+id/radio_button_two"
+                style="@style/main_footer_bar_radio"
+                android:drawableTop="@drawable/widget_bar_two"
+                android:text="第二个页面" />
+
+            <RadioButton
+                android:id="@+id/radio_button_three"
+                style="@style/main_footer_bar_radio"
+                android:drawableTop="@drawable/widget_bar_three"
+                android:text="嵌套flutter页面" />
+
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+</LinearLayout>

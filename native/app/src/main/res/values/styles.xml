@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="main_footer_bar_radio">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:drawablePadding">1dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#c4bdc4</item>
+    </style>
+
+
+    <style name="match_match_vertical">
+        <item name="android:orientation">vertical</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="wrap_wrap_vertical">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="wrap_wrap_center_in_parent" parent="wrap_wrap_vertical">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+</resources>

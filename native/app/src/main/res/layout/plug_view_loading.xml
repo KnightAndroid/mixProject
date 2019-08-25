@@ -1,0 +1,16 @@
+<FrameLayout
+    style="@style/match_match_vertical"
+    android:background="#00000000"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/loadingImageView"
+        style="@style/wrap_wrap_center_in_parent"
+        android:src="@mipmap/load_bg" />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        style="@style/wrap_wrap_center_in_parent"
+        android:src="@mipmap/ic_launcher" />
+</FrameLayout>
