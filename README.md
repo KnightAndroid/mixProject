@@ -9,17 +9,17 @@ Flutter自从1.0版本发布，现在越来越受欢迎，很多公司都在研�
 ### 1.创建Android工程
 在创建Android工程前，新建一个文件夹(目录)，取名叫：mixProject，里面在创建两个文件夹分别是：flutter和native，示意图如下：**注意:后面flutter文件夹会删除，这里这是说明整个工程的目录**
 
-![文件夹目录](https://user-gold-cdn.xitu.io/2019/7/7/16bcaebc70ec221c?w=972&h=538&f=png&s=80092)
+![文件夹目录](image/文件夹目录.png)
 下面就在native文件夹创建Android工程,`File`->`New`->`New Project`:
 
-![创建Android工程](https://user-gold-cdn.xitu.io/2019/7/7/16bcaf20c36b0e40?w=897&h=639&f=png&s=64463)
+![创建Android工程](image/创建Android项目.png)
 
 ### 2.创建Module模式的Flutter工程
 创建工程之前先把`flutte`文件夹目录删除，在`mixProject`目录下以Module形式创建Flutter工程，`File`->`New`->`New Flutter Project`,**这里要注意，选类型的要选`Flutter Module`，Flutter项目跟Android工程根文件夹是同级的，它不同于普通的Android module存在于Android工程根目录下。**
 
-![module形式创建Flutter](https://user-gold-cdn.xitu.io/2019/7/7/16bcafdb7c8cf896?w=895&h=712&f=png&s=56874)
+![module形式创建Flutter](image/module形式创建Flutter.png)
 
-![module形式创建Flutter(二)](https://user-gold-cdn.xitu.io/2019/7/7/16bcb0a1b6cc5e24?w=899&h=716&f=png&s=61778)
+![module形式创建Flutter(二)](image/module形式创建Flutter(二).png)
 
 这样Android工程和Flutter工程都已经创建好了。
 另外也可以通过(在项目根目录下)命令**flutter create -t module my_flutter**去创建Flutter的`Module`工程。
@@ -35,7 +35,7 @@ evaluate(new File(                                                      // new
 ))
 ```
 
-![Android工程添加对Flutter的依赖](https://user-gold-cdn.xitu.io/2019/7/7/16bcb264b144c90a?w=1218&h=348&f=png&s=70668)
+![Android工程添加对Flutter的依赖](image/Android工程添加对Flutter的依赖)
 这样要注意：`xxxx/.android/include_flutter.groovy`中的xxxx一定要和以module形式创建的Flutter工程名一致。
 这时候`Sync`一下，发现Flutter的module已经添加到项目中了。
 
@@ -47,14 +47,14 @@ implementation project(':flutter')
 ```
 这时候在同步一下，如果没报错，证明flutter工程已经依赖进Android工程里了，如果出现下面错误：
 
-![出现错误](https://user-gold-cdn.xitu.io/2019/7/7/16bcb4120b5bfc38)
+![出现错误](image/出现minSdkVersion不一致.png)
 flutter工程和Android工程下minSdkVersion要一致。
 
 ##  三、源码简单分析
 ### 1. FlutterActivity
 在Android原生调用Flutter页面之前，先知道`FlutterActivity`这个类，在创建的Flutter`Module`中`.android`->`app`->`flutter_module`->`host`下有个`MainActivity`,这个类是继承`FlutterActivity`类，在`AndroidManifest.xml`下并且配置了这个启动界面，也就是说当原生Android调用Flutter时，该类是Flutter项目的页面入口。那么下面看看这个类的源码，到底做了什么？
 
-![FlutterActivity实现的接口](https://user-gold-cdn.xitu.io/2019/7/15/16bf6532ba2fa26f?w=952&h=261&f=png&s=63065)
+![FlutterActivity实现的接口](image/FlutterActivity实现的借口)
 可以发现它继承了`Activity`，也就是它还是普通的`Activity`，另外还实现了三个接口：
 
 * Provider
@@ -758,7 +758,7 @@ public class FlutterJNI {
 
 这里可以得出，只要打开`FlutterActivity`页面的时候，通过`intent`传入的key，如果这个值于`Flutter`项目定义的route值一样，就能跳到对应的页面。下面用一张图简单描述流程：
 
-![启动过程](https://user-gold-cdn.xitu.io/2019/7/29/16c3e07495f76684?w=1166&h=1268&f=png&s=60521)
+![启动过程](image/Flutter启动过程.png)
 也就是当原生打开Flutter页面的时候，其实还是跳转`Activity`，只不过这个`Activity`铺了`FlutterView`来显示，那下面具体实践。
 
 ## 四、简单例子
@@ -1059,7 +1059,7 @@ public class FlutterFragment extends Fragment {
 ```
 看看效果图：
 
-![嵌套Flutter页面](https://user-gold-cdn.xitu.io/2019/8/22/16cb9a0a0df2b6fd?w=352&h=601&f=gif&s=192162)
+![嵌套Flutter页面](image/嵌套FlutterFragment.gif)
 可以看到只通过`new FlutterFragment`代码即可把`Flutter`页面嵌套到原生Android里。
 
 ### 2.2.跳转到指定页面
@@ -1342,7 +1342,7 @@ class _TabFragmentState extends State<TabFragment>{
 效果图如下：
 
 
-![fragment嵌套Flutter](https://user-gold-cdn.xitu.io/2019/8/24/16cc43b8ba160ce9?w=704&h=1202&f=gif&s=373077)
+![fragment嵌套Flutter](image/以fragment形式嵌套效果图.gif)
 点击**嵌套Flutter页面**，返现`Flutter页面`以`Fragment`形式嵌套在原生中了。
 
 ### 3.以FlutterActivity为载体
@@ -1574,12 +1574,12 @@ class _TestState extends State<Test>{
 #### 3.5.效果
 **debug**环境下效果如下：
 
-![debug环境下](https://user-gold-cdn.xitu.io/2019/8/25/16cc763bb0cfe87c?w=704&h=1202&f=gif&s=447362)
+![debug环境下](image/debug环境下跳转Flutter页面效果.gif)
 可以看到`debug`下会有明显的黑屏现象，那么`release`会不会是这样呢？
 
 **release**环境下效果如下：
 
-![release环境下](https://user-gold-cdn.xitu.io/2019/8/25/16cc84a7e651c98a?w=596&h=1280&f=gif&s=157993)
+![release环境下](image/release环境下体验.gif)
 可以看到`release`下原生跳转到`Flutter`没有了黑屏，且切换速度很快。
 
 ### 4.以普通Activity为载体
@@ -1645,7 +1645,7 @@ public class MyFlutterActivity extends AppCompatActivity implements MethodChanne
 }
 ```
 
-![普通跳转FlutterView](https://user-gold-cdn.xitu.io/2019/8/25/16cc934dd9ee648a?w=352&h=601&f=gif&s=182347)
+![普通跳转FlutterView](image/普通Activity跳转方式.gif)
 同样也是可以的。
 
 `Flutter`跳转`native`方式就很简单了，和弹出吐司一样，在`onMethodCall`做跳转就可以了，例如：
