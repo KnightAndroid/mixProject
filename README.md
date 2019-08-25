@@ -1575,11 +1575,13 @@ class _TestState extends State<Test>{
 **debug**环境下效果如下：
 
 ![debug环境下](image/debug环境下跳转Flutter页面效果.gif)
+
 可以看到`debug`下会有明显的黑屏现象，那么`release`会不会是这样呢？
 
 **release**环境下效果如下：
 
 ![release环境下](image/release环境下体验.gif)
+
 可以看到`release`下原生跳转到`Flutter`没有了黑屏，且切换速度很快。
 
 ### 4.以普通Activity为载体
@@ -1646,6 +1648,7 @@ public class MyFlutterActivity extends AppCompatActivity implements MethodChanne
 ```
 
 ![普通跳转FlutterView](image/普通Activity跳转方式.gif)
+
 同样也是可以的。
 
 `Flutter`跳转`native`方式就很简单了，和弹出吐司一样，在`onMethodCall`做跳转就可以了，例如：
